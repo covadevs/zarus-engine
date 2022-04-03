@@ -22,6 +22,7 @@ public class LangLoader extends BaseContext {
     public void load() {
         try {
             this.texts.load(LangLoader.class.getResourceAsStream("/lang/" + Configurations.getString(Configurations.LANGUAGE) + ".properties"));
+            this.texts.load(LangLoader.class.getResourceAsStream("/lang/engine/" + Configurations.getString(Configurations.LANGUAGE) + ".properties"));
             LangTemplate.getInstance().load(this.texts);
         } catch (IOException e) {
             pushMessage(new Message(LangMessages.LOAD_EXCEPTION_MESSAGE));
