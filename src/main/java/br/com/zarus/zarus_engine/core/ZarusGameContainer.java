@@ -2,6 +2,7 @@ package br.com.zarus.zarus_engine.core;
 
 import java.awt.event.KeyListener;
 import br.com.zarus.zarus_engine.conf.Configurations;
+import br.com.zarus.zarus_engine.lang.LangLoader;
 import br.com.zarus.zarus_engine.loop.GameLoop;
 import br.com.zarus.zarus_engine.loop.services.GameLoopCreatorService;
 import br.com.zarus.zarus_engine.screen.BasicScreen;
@@ -15,6 +16,7 @@ public class ZarusGameContainer {
 
 	public ZarusGameContainer(BasicScreen screen) {
 		Configurations.load();
+		LangLoader.getInstance().load();
 		this.mainScreen = MainScreenCreatorService.getInstance().create(screen);
 		configureGameLoop(mainScreen);
 	}

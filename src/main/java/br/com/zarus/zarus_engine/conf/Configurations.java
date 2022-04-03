@@ -12,9 +12,10 @@ public class Configurations extends BaseContext {
 	public static final String SCREEN_FRAMERATE_RATE = "screen.framerate.rate";
 	public static final String SCREEN_FRAMERATE_SHOW = "screen.framerate.show";
 	public static final String SCREEN_DISPLAY_TITLE = "screen.display.title";
+	public static final String LANGUAGE = "lang";
 
 	private static final Configurations instance = new Configurations();
-	private Properties properties;
+	private final Properties properties;
 
 
 	private Configurations() {

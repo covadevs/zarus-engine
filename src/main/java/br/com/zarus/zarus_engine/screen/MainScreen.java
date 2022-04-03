@@ -4,6 +4,7 @@ import java.awt.*;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 import br.com.zarus.zarus_engine.conf.Configurations;
+import br.com.zarus.zarus_engine.lang.LangTemplate;
 import br.com.zarus.zarus_engine.loop.GameLoop;
 import br.com.zarus.zarus_engine.loop.services.FramerateService;
 import br.com.zarus.zarus_engine.loop.services.JVMInfoService;
@@ -65,7 +66,7 @@ public final class MainScreen extends Canvas {
 	private void whenIsPaused(Graphics g) {
 		if (GameLoop.isPaused()) {
 			g.setColor(Color.WHITE);
-			g.drawString("PAUSED", (int) (Configurations.getInt(Configurations.SCREEN_SIZE_WIDTH) * 0.5), (int) (Configurations.getInt(Configurations.SCREEN_SIZE_HEIGHT) * 0.5));
+			g.drawString(LangTemplate.getInstance().templateString("${br.com.zarus.zarus_engine.screen.MainScreen.paused}"), (int) (Configurations.getInt(Configurations.SCREEN_SIZE_WIDTH) * 0.5), (int) (Configurations.getInt(Configurations.SCREEN_SIZE_HEIGHT) * 0.5));
 		}
 	}
 
