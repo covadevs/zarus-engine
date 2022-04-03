@@ -82,19 +82,19 @@ public class GameLoop extends BaseContext {
 		GameLoop.running = isRunning;
 	}
 
-	public static final boolean isRunning() {
+	public static boolean isRunning() {
 		return running;
 	}
 	
-	public static final boolean isPaused() {
+	public static boolean isPaused() {
 		return pause;
 	}
 	
-	public static final void exit() {
+	public static void exit() {
 		setIsRunning(false);
 	}
 	
-	public static final void pause() {
+	public static void pause() {
 		if (!isPaused()) {
 			GameLoop.pause = true;
 			return;
@@ -103,7 +103,7 @@ public class GameLoop extends BaseContext {
 		resume();
 	}
 	
-	public static final void resume() {
+	public static void resume() {
 		GameLoop.pause = false;
 	}
 
